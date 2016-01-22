@@ -21,8 +21,6 @@ App.controller("FeedCtrl", ['$scope','FeedService', function ($scope,Feed) {
             angular.forEach($scope.feeds,function(value, key){
 
               var content = value.content;
-
-              // var img = content.find('img').src;
               var doesitwork = $(content).find('img').attr('src');
               console.log(doesitwork);
               // var firstImage = $(value.content).find('img').eq(0).attr('src');

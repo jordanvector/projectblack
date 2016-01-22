@@ -190,11 +190,13 @@
     <md-card ng-repeat="feed in feeds | filter:filterText">
       <a href="{{feed.link}}?ref=projectblack" target="_blank" style="text-decoration:none;">
         <md-card-title-media>
-          <img class="md-media-md" src="{{feed.mediaGroups[0].contents[0].url}}">
           <div ng-if="feed.mediaGroups[0].contents[0].url == undefined">
             <img style="max-height: 200px;"class="md-media-md" src="{{feed.img}}">
           </div>
-          <md-card-title-media>
+          <div ng-if="feed.mediaGroups[0].contents[0].url != undefined">
+            <img class="md-media-md" src="{{feed.mediaGroups[0].contents[0].url}}">
+          </div>
+        </md-card-title-media>
             <md-card-content>
               <h4 style="color: rgba(255, 255, 255, 0.5);">{{feed.title}}</h4>
                 <!-- <p style="text-decoration:none; color:white;">{{feed.contentSnippet}}</p> -->
